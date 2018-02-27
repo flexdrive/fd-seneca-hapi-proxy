@@ -7,12 +7,12 @@ exports.register = (server, options, next) => {
   seneca.add(
     {
       role: 'mono',
-      cmd: 'execute'
+      cmd: 'proxy_internal'
     },
-    executeRoute
+    proxyInternal
   )
 
-  function executeRoute({ label, path, method, credentials, payload }, reply) {
+  function proxyInternal({ label, path, method, credentials, payload }, reply) {
     const service = server.select('services').select(label)
 
     if (!service) {

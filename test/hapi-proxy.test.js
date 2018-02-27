@@ -56,7 +56,7 @@ describe('hapi proxy', function() {
           seneca.act(
             {
               role: 'mono',
-              cmd: 'execute',
+              cmd: 'proxy_internal',
               label: 'testservice',
               path: '/test'
             },
